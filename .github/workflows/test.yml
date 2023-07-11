@@ -20,3 +20,10 @@ jobs:
 
             - name: Test
               run: go test ./... -v
+              env:
+                  EDGE_CONFIG_ID: ${{ secrets.EDGE_CONFIG_ID }}
+                  EDGE_CONFIG_TOKEN: ${{ secrets.EDGE_CONFIG_TOKEN }}
+                  EDGE_CONFIG_DIGEST: ${{ secrets.EDGE_CONFIG_DIGEST }}
+                  TEST_KEY: ${{ secrets.TEST_KEY }}
+                  TEST_VALUE: ${{ secrets.TEST_VALUE }}
+                  API_TOKEN: ${{ secrets.API_TOKEN }}
