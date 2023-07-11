@@ -1,7 +1,7 @@
 <div align="center">
     <h3>edgeconfig</h3>
     <br/>
-    Go library to interact with [Vercel Edge Config](https://vercel.com/docs/storage/edge-config).
+    Go library to interact with <a href="https://vercel.com/docs/storage/edge-config" target="_blank">Vercel Edge Config</a>.
     <br/>
     <br/>
     <a href="https://pkg.go.dev/github.com/thatmattlove/go-vercel-edge-config">
