@@ -168,12 +168,11 @@ func NewFromConnectionString(connectionString string) (client *VercelEdgeConfigC
 		err = fmt.Errorf("edge config ID must be specified as the path")
 		return
 	}
-	paths := strings.Split(u.Path, "/")
-	if len(u.Path) != 1 {
+	_, configID, _ := strings.Cut(u.Path, "/")
+	if configID == "" {
 		err = fmt.Errorf("invalid path. Edge config ID must be specified as the path")
 		return
 	}
-	configID := paths[0]
 	opts := &ClientOptions{
 		TeamID:          "",
 		EdgeConfigToken: token,

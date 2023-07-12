@@ -61,6 +61,15 @@ func TestVercelEdgeConfig_Item(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, env.TestValue, value)
 	})
+	t.Run("get single item with arg from connection string", func(t *testing.T) {
+		env, err := LoadEnv()
+		assert.NoError(t, err)
+		client, err := edgeconfig.NewFromConnectionString(env.EdgeConfigConnectionString)
+		assert.NoError(t, err)
+		value, err := client.Item(env.TestKey)
+		assert.NoError(t, err)
+		assert.Equal(t, env.TestValue, value)
+	})
 }
 func TestVercelEdgeConfig_Digest(t *testing.T) {
 	t.Run("get digest with arg", func(t *testing.T) {
